@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon link -->
+</head>
+<body>
+    <div class="calculator">
+        <h1>iMGN World Currency Calculator</h1>
+        <div class="header-image">
+            <img src="header-image.png" alt="Wizarding Currency">
+        </div>
+        <div class="input-section">
+            <label for="amount">Enter Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount">
+            <select id="currency-from" class="currency-select">
+                <option value="knut">Knut</option>
+                <option value="sickle">Sickle</option>
+                <option value="galleon">Galleon</option>
+            </select>
+            <button class="convert-button" onclick="calculate()">Convert</button>
+        </div>
+        <div class="output-section">
+            <div class="currency">
+                <img id="knut-img" src="knut.png" alt="Knut">
+                <p id="knut-result">0 Knuts</p>
+            </div>
+            <div class="currency">
+                <img id="sickle-img" src="sickle.png" alt="Sickle">
+                <p id="sickle-result">0 Sickles</p>
+            </div>
+            <div class="currency">
+                <img id="galleon-img" src="galleon.png" alt="Galleon">
+                <p id="galleon-result">0 Galleons</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
