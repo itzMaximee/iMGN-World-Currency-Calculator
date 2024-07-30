@@ -5,7 +5,7 @@
     --calculator-background-light: rgba(255, 255, 255, 0.9);
     --calculator-background-dark: rgba(33, 33, 33, 0.9);
     --text-color-light: #333;
-    --text-color-dark: #f4f4f4;
+    --text-color-dark: #f4f4f4; /* Light color for text in dark mode */
     --button-background-light: #007bff;
     --button-background-dark: #1e90ff;
     --select-background-light: #000000;
@@ -116,7 +116,7 @@ body {
     }
 
     .calculator h1 {
-        color: var(--text-color-dark);
+        color: #ffffff; /* Explicit white color for dark mode */
     }
 
     .currency-select {
