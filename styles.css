@@ -1,18 +1,33 @@
+/* Define color variables */
+:root {
+    --background-color-light: #f4f4f9;
+    --background-color-dark: #121212;
+    --calculator-background-light: rgba(255, 255, 255, 0.9);
+    --calculator-background-dark: rgba(33, 33, 33, 0.9);
+    --text-color-light: #333;
+    --text-color-dark: #f4f4f4;
+    --button-background-light: #007bff;
+    --button-background-dark: #1e90ff;
+    --select-background-light: #000000;
+    --select-background-dark: #444444;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url('background.jpg'); /* Add your custom wallpaper here */
+    background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .calculator {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--calculator-background-light);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,16 +36,14 @@ body {
     max-width: 100%;
 }
 
+.calculator.dark-mode {
+    background-color: var(--calculator-background-dark);
+}
+
 .calculator h1 {
     margin: 0;
     font-size: 24px;
-    color: #333;
-}
-
-.header-image {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    color: var(--text-color-light);
 }
 
 .header-image img {
@@ -67,13 +80,21 @@ body {
 }
 
 .currency-select {
-    background-color: #000000; /* Customize currency select background color here */
+    background-color: var(--select-background-light);
     color: white;
 }
 
+.currency-select.dark-mode {
+    background-color: var(--select-background-dark);
+}
+
 .convert-button {
-    background-color: #007bff; /* Customize convert button background color here */
+    background-color: var(--button-background-light);
     color: white;
+}
+
+.convert-button.dark-mode {
+    background-color: var(--button-background-dark);
 }
 
 .currency {
@@ -117,4 +138,3 @@ body {
         font-size: 14px;
     }
 }
-
