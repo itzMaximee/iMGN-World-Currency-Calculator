@@ -1,29 +1,21 @@
-function calculate() {
-    const amount = parseFloat(document.getElementById('amount').value);
-    const currencyFrom = document.getElementById('currency-from').value;
-
-    let knuts, sickles, galleons;
-
-    switch (currencyFrom) {
-        case 'knut':
-            knuts = amount;
-            sickles = amount * 0.03448;
-            galleons = amount * 0.002028;
-            break;
-        case 'sickle':
-            knuts = amount * 29;
-            sickles = amount;
-            galleons = amount * 0.05882;
-            break;
-        case 'galleon':
-            knuts = amount * 493;
-            sickles = amount * 17;
-            galleons = amount;
-            break;
+// Function to toggle between dark mode and light mode
+function toggleDarkMode() {
+    const calculator = document.querySelector('.calculator');
+    const currencySelect = document.getElementById('currency-from');
+    const convertButton = document.querySelector('.convert-button');
+    
+    if (calculator.classList.contains('dark-mode')) {
+        calculator.classList.remove('dark-mode');
+        currencySelect.classList.remove('dark-mode');
+        convertButton.classList.remove('dark-mode');
+        document.body.style.backgroundColor = 'var(--background-color-light)';
+    } else {
+        calculator.classList.add('dark-mode');
+        currencySelect.classList.add('dark-mode');
+        convertButton.classList.add('dark-mode');
+        document.body.style.backgroundColor = 'var(--background-color-dark)';
     }
-
-    document.getElementById('knut-result').innerText = `${knuts.toFixed(2)} Knuts`;
-    document.getElementById('sickle-result').innerText = `${sickles.toFixed(2)} Sickles`;
-    document.getElementById('galleon-result').innerText = `${galleons.toFixed(2)} Galleons`;
 }
 
+// Add event listener to a toggle button or link
+document.getElementById('toggle-dark-mode').addEventListener('click', toggleDarkMode);
