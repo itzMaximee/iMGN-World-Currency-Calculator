@@ -115,6 +115,10 @@ body {
         background-color: var(--calculator-background-dark);
     }
 
+    .calculator h1 {
+        color: var(--text-color-dark);
+    }
+
     .currency-select {
         background-color: var(--select-background-dark);
     }
