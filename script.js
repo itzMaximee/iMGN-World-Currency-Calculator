@@ -18,4 +18,4 @@ function toggleDarkMode() {
 }
 
 // Add event listener to a toggle button or link
-document.getElementById('toggle-dark-mode').addEventListener('click', toggleDarkMode);
+
