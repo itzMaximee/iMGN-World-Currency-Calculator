@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon link -->
+    <style>
+        /* Inline styles for the heading in dark mode */
+        .dark-mode .calculator h1 {
+            color: #ffffff; /* White color for dark mode */
+        }
+    </style>
 </head>
 <body>
     <div class="calculator">
@@ -38,6 +44,52 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function calculate() {
+            const amount = parseFloat(document.getElementById('amount').value);
+            const currencyFrom = document.getElementById('currency-from').value;
+
+            let knuts, sickles, galleons;
+
+            switch (currencyFrom) {
+                case 'knut':
+                    knuts = amount;
+                    sickles = amount * 0.03448;
+                    galleons = amount * 0.002028;
+                    break;
+                case 'sickle':
+                    knuts = amount * 29;
+                    sickles = amount;
+                    galleons = amount * 0.05882;
+                    break;
+                case 'galleon':
+                    knuts = amount * 493;
+                    sickles = amount * 17;
+                    galleons = amount;
+                    break;
+            }
+
+            document.getElementById('knut-result').innerText = `${knuts.toFixed(2)} Knuts`;
+            document.getElementById('sickle-result').innerText = `${sickles.toFixed(2)} Sickles`;
+            document.getElementById('galleon-result').innerText = `${galleons.toFixed(2)} Galleons`;
+        }
+
+        // Apply dark mode based on system preference
+        function applyTheme() {
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            
+            if (prefersDarkScheme) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        // Initial theme application
+        applyTheme();
+
+        // Listen for changes in the color scheme
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', applyTheme);
+    </script>
 </body>
 </html>
